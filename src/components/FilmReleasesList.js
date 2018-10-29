@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
-import Films from './Films';
+import Film from './Film';
 
 class FilmReleasesList extends Component{
+
   render(){
+
+    const allFilms = this.props.data.map(film => {
+      return (
+        <Film
+          id={film.id}
+          name={film.name}
+          url={film.url} />
+      )
+    })
+
     return(
-      <Films />
+      <div className="film-releases-list">
+        {allFilms}
+      </div>
     )
   }
 
